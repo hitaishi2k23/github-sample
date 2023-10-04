@@ -3,9 +3,11 @@ on: [push]
 jobs:
   run-shell-command:
       runs-on: ubuntu-latest
+      env:
+        My_Variable: "Hello, World!"
       steps:
         - name: string
-          run: echo "welcome devops"
+          run: echo $My_Variable
         - name: multiline scriprt
           run: |
             node -v
